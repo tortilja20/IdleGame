@@ -23,14 +23,14 @@ public class Upgrade : MonoBehaviour
     {
 
         //should reasearch implementing scaling with better math
-        if (PlayerStats.DamageOT >= 100)
+        if (PetStats.DamageOT >= 100)
         {
             DoTMulti = 10;
         }
 
         if (Money.gold >= DoTPrice * DoTMulti)
         {
-            PlayerStats.DamageOT += 5 * DoTMulti;
+            PetStats.DamageOT += 5 * DoTMulti;
             Money.gold -= DoTPrice * DoTMulti;
 
             DoTPrice += Math.Round(DoTPrice * 0.30);

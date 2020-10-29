@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.Video;
 using UnityEngine.PlayerLoop;
 using System.Xml.XPath;
+using UnityEditor.Experimental.GraphView;
 
 public class Monster : MonoBehaviour
 {
@@ -60,9 +61,28 @@ public class Monster : MonoBehaviour
         LevelingScript.XP += xpValue;
         if (LevelingScript.XP >= LevelingScript.XPToNextLevel)
             LevelingScript.LevelUp();
-       
 
-      if (UnityEngine.Random.Range(0f,1f) < GemChance)
+
+        System.Random rnd = new System.Random();
+        int roll = rnd.Next(1, 3);
+        switch (roll)
+        {
+            case 1:
+                Resources.fire += 1;
+                break;
+            case 2:
+                Resources.stone += 1;
+                break;
+            case 3:
+                Resources.water += 1;
+                break;
+            default:
+                break;
+        }
+
+
+
+        if (UnityEngine.Random.Range(0f,1f) < GemChance)
         {
             Money.gems += GemValue;
         }
@@ -78,12 +98,12 @@ public class Monster : MonoBehaviour
 
     void MonsterDOT()
     {
-        MonsterHP -= PlayerStats.DamageOT;
+        MonsterHP -= PetStats.DamageOT;
     }
 
     void MonsterDMG()
     {
-        MonsterHP -= PlayerStats.Damage * ((Money.prestigue * 0.01)+1);
+        MonsterHP -= Dmg.Calc();
     }
 
     void BossKill()

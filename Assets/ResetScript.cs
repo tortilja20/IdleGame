@@ -14,7 +14,8 @@ public static class ResetScript
         GameObject.Destroy(MonsterManager.monster);
 
         PlayerStats.Damage = 1;
-        PlayerStats.DamageOT = 0;
+
+        PetStats.DamageOT = 0;
 
         Upgrade.DoTMulti = 1;
         Upgrade.DMGMulti = 1;
