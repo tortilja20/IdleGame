@@ -19,10 +19,42 @@ public static class PetStats
 
 public static class Resources
 {
-    public static double water;
-    public static double fire;
-    public static double stone;
+    public static double Wheat;
+    public static double Meat;
+    public static double Beet;
+
+    public static double CollableWheat;
+    public static double CollableMeat;
+    public static double CollableBeet;
+
+    public static double Wheatph=0;
+    public static double Meatph=0;
+    public static double Beetph=0;
+
+    public static void BuyFarm(string type)
+    {
+        switch(type)
+        {
+            case "Wheat":
+                Wheatph += 10;
+                break;
+            case "Meat":
+                Meatph += 10;
+                break;
+            case "Beet":
+                Beetph += 10;
+                break;
+
+        }
+        Money.gems -= 100;
+
+    }
+
+
+
+
 }
+
 
 public static class Dmg{
 

@@ -68,13 +68,13 @@ public class Monster : MonoBehaviour
         switch (roll)
         {
             case 1:
-                Resources.fire += 1;
+                Resources.Wheat += 1;
                 break;
             case 2:
-                Resources.stone += 1;
+                Resources.Meat += 1;
                 break;
             case 3:
-                Resources.water += 1;
+                Resources.Beet += 1;
                 break;
             default:
                 break;

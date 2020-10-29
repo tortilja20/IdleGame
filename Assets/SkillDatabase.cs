@@ -18,7 +18,7 @@ public class SkillDatabase
             new Skill(1,"Hunter Passive","Does Melee Damage","Hunter",
             new Dictionary<string, double>
             {
-                {"DotMulti", 1.20 },
+                {"PetMulti", 1.20 },
             }),
             new Skill(2,"Rogue Passive","Increased Gem Chance","Rogue",
             new Dictionary<string, double>
